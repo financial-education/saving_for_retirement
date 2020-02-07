@@ -1,11 +1,70 @@
+
 #+title: Saving for Retirement
 #+author: Matt Brigida, Ph.D.
 #+SETUPFILE: https://fniessen.github.io/org-html-themes/setup/theme-readtheorg.setup
 
 
-Say you intend to put 
+* Annuity Retirement Plan
 
+Say as your retirement plan you intend to put $5000 per year, for the next 20 years, into a retirement account.  Further, you expect this account to earn 8% per year.  In this case your savings plan is in the form of an *annuity*.
 
+#+BEGIN_QUOTE
+Annuity: a security with a fixed cash flow every period for a fixed number of periods.
+#+END_QUOTE
+
+In your retirement plan $5000 is the fixed cash flow, the period is yearly, and the number of periods is 20.  
+
+** Future Value
+
+To calculate how much we'll have in our retirement account we can (1) use a convenient annuity formula, or (2) find the future value of each individual cash flow and sum these future values.
+
+*** Annuity
+
+We can calculate how much money you will have in your account at the end of year 20 with the following /future value of an annuity/ formula:
+
+$FVA = C\left(\frac{(1 + r)^n - 1}{r}\right)$
+
+where /FVA/ denotes the future value of the annuity, /C/ is the cash flow per period, /r/ is the interest rate per period, and /n/ is the number of periods.
+
+Using this formula you can calculate how much money you will have in 20 years:
+
+$FVA = 5000\left(\frac{(1 + 0.08)^20 - 1}{0.08}\right) = 228809.8$
+
+So you will have $228,809.90 in your retirement account in 20 years.
+
+*** Future Value of Each Cash Flow 
+
+Here is a functional programming approach implemented in python---it uses recursion instead of the imperative style loop. Don't worry if it doesn't make sense at this point.
+
+#+BEGIN_SRC python
+def fva(cf, r, n):
+    if n - 1 == 0:
+        return cf
+    else:
+        return cf * (1 + r)**(n - 1) + fva(cf, r, n - 1)
+
+return fva(5000, 0.08, 20)
+#+END_SRC
+
+#+RESULTS:
+: 228809.82149058158
+
+Same approach in R.  
+
+#+BEGIN_SRC R
+fva <- function(cf, r, n){
+    if(n - 1 == 0){
+        cf
+    } else {
+        cf * (1 + r)^(n - 1) + fva(cf, r, n - 1)
+    }
+}
+
+fva(5000, 0.08, 20)
+#+END_SRC
+
+#+RESULTS:
+: 228809.821490582
 
 
 
