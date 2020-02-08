@@ -18,7 +18,7 @@ In your retirement plan $5000 is the fixed cash flow, the period is yearly, and 
 
 To calculate how much we'll have in our retirement account we can (1) use a convenient annuity formula, or (2) find the future value of each individual cash flow and sum these future values.
 
-*** Annuity
+*** Using an Annuity Formula
 
 We can calculate how much money you will have in your account at the end of year 20 with the following /future value of an annuity/ formula:
 
@@ -34,9 +34,66 @@ So you will have $228,809.90 in your retirement account in 20 years.
 
 *** Future Value of Each Cash Flow 
 
-Here is a functional programming approach implemented in python---it uses recursion instead of the imperative style loop. Don't worry if it doesn't make sense at this point.
+Annuity formulas were much more useful prior to widespread use of spreadsheets and programming languages.  
 
-#+BEGIN_SRC python
+**** Spreadsheet
+
+The following table shows how you can organize a spreadsheet to find the future value of the annuity.  The formula in the future value column is:
+
+$FV = C(1 + r)^{(20 - t)}$
+
+|----------+----------------+-------------------+--------------|
+| Time (t) | Cash Flow (cf) | Interest Rate (r) | FV @ year 20 |
+|----------+----------------+-------------------+--------------|
+|        1 |           5000 |              0.08 |    21578.505 |
+|        2 |           5000 |              0.08 |    19980.097 |
+|        3 |           5000 |              0.08 |    18500.090 |
+|        4 |           5000 |              0.08 |    17129.713 |
+|        5 |           5000 |              0.08 |    15860.846 |
+|        6 |           5000 |              0.08 |    14685.968 |
+|        7 |           5000 |              0.08 |    13598.119 |
+|        8 |           5000 |              0.08 |    12590.851 |
+|        9 |           5000 |              0.08 |    11658.195 |
+|       10 |           5000 |              0.08 |    10794.625 |
+|       11 |           5000 |              0.08 |    9995.0231 |
+|       12 |           5000 |              0.08 |    9254.6511 |
+|       13 |           5000 |              0.08 |    8569.1213 |
+|       14 |           5000 |              0.08 |    7934.3716 |
+|       15 |           5000 |              0.08 |    7346.6404 |
+|       16 |           5000 |              0.08 |    6802.4448 |
+|       17 |           5000 |              0.08 |      6298.56 |
+|       18 |           5000 |              0.08 |        5832. |
+|       19 |           5000 |              0.08 |        5400. |
+|       20 |           5000 |              0.08 |        5000. |
+|----------+----------------+-------------------+--------------|
+|          |                | FVA  =            |    228809.82 |
+|----------+----------------+-------------------+--------------|
+#+TBLFM: $2=@2$2::$3=@2$3::$4=vsum(@2..@21)
+
+**** Loop
+
+#+BEGIN_SRC python :exports both
+cf = 5000
+r = 0.08
+n = 20
+
+fva = 0
+for n in range(n):
+    fva += cf * (1 + r)**(n)
+
+return fva
+#+END_SRC
+
+#+RESULTS:
+: 228809.82149058158
+
+Note range(n) gives you 0, 1, ... , n-1 which is happily what we want.
+
+**** Recursive
+
+Here is a functional programming approach implemented in python---it uses recursion instead of the imperative style loop. It is nice because it doesn't rely on changing variables' state, which can lead to errors.  Don't worry if it doesn't make sense at this point.
+
+#+BEGIN_SRC python :exports both
 def fva(cf, r, n):
     if n - 1 == 0:
         return cf
@@ -51,7 +108,7 @@ return fva(5000, 0.08, 20)
 
 Same approach in R.  
 
-#+BEGIN_SRC R
+#+BEGIN_SRC R :exports both
 fva <- function(cf, r, n){
     if(n - 1 == 0){
         cf
@@ -68,7 +125,7 @@ fva(5000, 0.08, 20)
 
 
 
-* Interactive App
+** Interactive App
 
 The following app will calculate OCF for any company you choose.  
 
@@ -184,7 +241,38 @@ tr:nth-child(even) {
 #+END_EXPORT
 
 
- 
+* Solving for the Number of Periods
+
+You may also want to know how long you have to save for retirement until you hit a particular goal amount.  
+
+** Using the FV Annuity Formula
+
+We can rearrange our future value of an annuity formula for n:
+
+$FVA = C\left(\frac{(1 + r)^n - 1}{r}\right)$
+
+becomes:
+
+$(1 + r)^n = \frac{FVA(r)}{C} + 1 = \frac{FVA(r) + C}{C}$
+
+and taking logs:
+
+$n = \frac{ln\left(\frac{FVA(r) + C}{C}\right)}{ln(1 + r)}$
+
+So, say we wanted to have $400,000 in our account at retirement.  Then we have to save for:
+
+$n = \frac{ln\left(\frac{400,000(0.08) + 5000}{5000}\right)}{ln(1 + 0.08)} = 26\ years$
+
+
+# ** Using Python
+
+# Add Python approach.
+
+
+* Solving for r
+
+
+
 
 * Credits and Collaboration
 
