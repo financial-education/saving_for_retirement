@@ -193,49 +193,48 @@ tr:nth-child(even) {
 
 
 
-  <center><h2>OCF Calculator:</h2></center>
+  <center><h2>Future Value of an Annuity Calculator:</h2></center>
 <div class="slidecontainer">
-  <input type="range" min="0" max="100" value="50" class="slider" id="sales">
-  <p align="center"><b>Sales: <span id="sales_out"></b></span></p>  
-  <input type="range" min="0" max="100" value="50" class="slider" id="costs">
-  <p align="center"><b>Costs: <span id="costs_out"></b></span></p>  
-  <input type="range" min="0" max="100" value="50" class="slider" id="depreciation">
-  <p align="center"><b>Depreciation: <span id="depreciation_out"></b></span></p>  
-  <input type="range" min="0" max="100" value="40" class="slider" id="tax_rate">
-  <p align="center"><b>Tax Rate: <span id="tax_rate_out">%</b></span></p>  
+  <input type="range" min="100" max="10000" value="5000" class="slider" id="cf" step="100">
+  <p align="center"><b>Cash Flow: <span id="cf_out"></b></span></p>  
+  <input type="range" min="0.00" max="100.00" value="50" class="slider" id="r">
+  <p align="center"><b>Interest Rate per Period: <span id="r_out">%</b></span></p>  
+  <input type="range" min="1" max="100" value="50" class="slider" id="n">
+  <p align="center"><b>Number of Periods: <span id="n_out"></b></span></p>  
 </div>
 
 <center><button onclick="myJsFunction()">Calculate</button></center>
+<br>
+<br>
+<center>
+The <b>future value of the annuity is $<span id="fva"></span></b>
+</center>
+<br>
+<br>
+<hr>
+<!---
 <center>
 <br>
 <table>
   <tr>
-    <th>Sales</th>
-    <th><span id="sales_table"></span></th>
+    <th>Cash Flow</th>
+    <th><span id="cf_table"></span></th>
   </tr>
   <tr>
-    <th>Costs</th>
-    <th><span id="costs_table"></span></th>
+    <th>Interest Rate</th>
+    <th><span id="r_table"></span></th>
   </tr>
   <tr>
-    <th>Depreciation</th>
-    <th><span id="depreciation_table"></span></th>
+    <th>Number of Periods</th>
+    <th><span id="n_table"></span></th>
   </tr>
   <tr>
-    <th>EBIT</th>
-    <th><span id="ebit"></span></th>
-  </tr>
-  <tr>
-    <th>Taxes</th>
-    <th><span id="taxes"></span></th>
-  </tr>
-  <tr>
-    <th>OCF</th>
-    <th><span id="ocf"></span></th>
+    <th>Future Value of the Annuity</th>
+    <th><span id="fva"></span></th>
   </tr>
 </table>
 </center>
-
+-->
     <script src="src/app1.js"></script>
 
 #+END_EXPORT
