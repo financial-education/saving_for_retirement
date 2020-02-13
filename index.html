@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-02-08 Sat 19:58 -->
+<!-- 2020-02-12 Wed 19:46 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Saving for Retirement</title>
@@ -262,31 +262,32 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org23eb16c">1. Annuity Retirement Plan</a>
+<li><a href="#org376b588">1. Annuity Retirement Model</a>
 <ul>
-<li><a href="#orga8b6761">1.1. Future Value</a>
+<li><a href="#org7eeafc5">1.1. Future Value</a>
 <ul>
-<li><a href="#orgb44e256">1.1.1. Using an Annuity Formula</a></li>
-<li><a href="#org9b82cd0">1.1.2. Future Value of Each Cash Flow</a></li>
+<li><a href="#orgae28c3b">1.1.1. Using an Annuity Formula</a></li>
+<li><a href="#orgf57a17b">1.1.2. Future Value of Each Cash Flow</a></li>
 </ul>
 </li>
-<li><a href="#org5830ccd">1.2. Interactive App</a></li>
-</ul>
-</li>
-<li><a href="#org47e43a4">2. Solving for the Number of Periods</a>
+<li><a href="#orgae8a205">1.2. Interactive App</a></li>
+<li><a href="#org4205e65">1.3. Solving for the Number of Periods</a>
 <ul>
-<li><a href="#org654569f">2.1. Using the FV Annuity Formula</a></li>
+<li><a href="#orgcbc06fd">1.3.1. Using the FV Annuity Formula</a></li>
 </ul>
 </li>
-<li><a href="#org4be152b">3. Solving for r</a></li>
-<li><a href="#org9ac32fd">4. Credits and Collaboration</a></li>
+<li><a href="#orgb0f6560">1.4. Solving for r</a></li>
+</ul>
+</li>
+<li><a href="#org2b85b0c">2. Growing Annuity Retirement Model</a></li>
+<li><a href="#orgf91f305">3. Credits and Collaboration</a></li>
 </ul>
 </div>
 </div>
 
 
-<div id="outline-container-org23eb16c" class="outline-2">
-<h2 id="org23eb16c"><span class="section-number-2">1</span> Annuity Retirement Plan</h2>
+<div id="outline-container-org376b588" class="outline-2">
+<h2 id="org376b588"><span class="section-number-2">1</span> Annuity Retirement Model</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Say as your retirement plan you intend to put $5000 per year, for the next 20 years, into a retirement account.  Further, you expect this account to earn 8% per year.  In this case your savings plan is in the form of an <b>annuity</b>.
@@ -303,16 +304,16 @@ In your retirement plan $5000 is the fixed cash flow, the period is yearly, and 
 </p>
 </div>
 
-<div id="outline-container-orga8b6761" class="outline-3">
-<h3 id="orga8b6761"><span class="section-number-3">1.1</span> Future Value</h3>
+<div id="outline-container-org7eeafc5" class="outline-3">
+<h3 id="org7eeafc5"><span class="section-number-3">1.1</span> Future Value</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 To calculate how much we'll have in our retirement account we can (1) use a convenient annuity formula, or (2) find the future value of each individual cash flow and sum these future values.
 </p>
 </div>
 
-<div id="outline-container-orgb44e256" class="outline-4">
-<h4 id="orgb44e256"><span class="section-number-4">1.1.1</span> Using an Annuity Formula</h4>
+<div id="outline-container-orgae28c3b" class="outline-4">
+<h4 id="orgae28c3b"><span class="section-number-4">1.1.1</span> Using an Annuity Formula</h4>
 <div class="outline-text-4" id="text-1-1-1">
 <p>
 We can calculate how much money you will have in your account at the end of year 20 with the following <i>future value of an annuity</i> formula:
@@ -340,8 +341,8 @@ So you will have $228,809.90 in your retirement account in 20 years.
 </div>
 </div>
 
-<div id="outline-container-org9b82cd0" class="outline-4">
-<h4 id="org9b82cd0"><span class="section-number-4">1.1.2</span> Future Value of Each Cash Flow</h4>
+<div id="outline-container-orgf57a17b" class="outline-4">
+<h4 id="orgf57a17b"><span class="section-number-4">1.1.2</span> Future Value of Each Cash Flow</h4>
 <div class="outline-text-4" id="text-1-1-2">
 <p>
 Annuity formulas were much more useful prior to widespread use of spreadsheets and programming languages.  
@@ -349,7 +350,7 @@ Annuity formulas were much more useful prior to widespread use of spreadsheets a
 </div>
 
 <ol class="org-ol">
-<li><a id="org82ae5ae"></a>Spreadsheet<br />
+<li><a id="org2a533eb"></a>Spreadsheet<br />
 <div class="outline-text-5" id="text-1-1-2-1">
 <p>
 The following table shows how you can organize a spreadsheet to find the future value of the annuity.  The formula in the future value column is:
@@ -532,7 +533,7 @@ The following table shows how you can organize a spreadsheet to find the future 
 </div>
 </li>
 
-<li><a id="orgc0fc415"></a>Loop<br />
+<li><a id="orged9aec1"></a>Loop<br />
 <div class="outline-text-5" id="text-1-1-2-2">
 <div class="org-src-container">
 <pre class="src src-python"><span style="color: #7590db;">cf</span> = 5000
@@ -558,7 +559,7 @@ Note range(n) gives you 0, 1, &#x2026; , n-1 which is happily what we want.
 </div>
 </li>
 
-<li><a id="org37c855a"></a>Recursive<br />
+<li><a id="orgc1df2a5"></a>Recursive<br />
 <div class="outline-text-5" id="text-1-1-2-3">
 <p>
 Here is a functional programming approach implemented in python&#x2014;it uses recursion instead of the imperative style loop. It is nice because it doesn't rely on changing variables' state, which can lead to errors.  Don't worry if it doesn't make sense at this point.
@@ -609,8 +610,8 @@ fva<span style="color: #4f97d7;">(</span>5000, 0.08, 20<span style="color: #4f97
 
 
 
-<div id="outline-container-org5830ccd" class="outline-3">
-<h3 id="org5830ccd"><span class="section-number-3">1.2</span> Interactive App</h3>
+<div id="outline-container-orgae8a205" class="outline-3">
+<h3 id="orgae8a205"><span class="section-number-3">1.2</span> Interactive App</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 The following app will calculate OCF for any company you choose.  
@@ -726,20 +727,19 @@ The <b>future value of the annuity is $<span id="fva"></span></b>
     <script src="src/app1.js"></script>
 </div>
 </div>
-</div>
 
 
-<div id="outline-container-org47e43a4" class="outline-2">
-<h2 id="org47e43a4"><span class="section-number-2">2</span> Solving for the Number of Periods</h2>
-<div class="outline-text-2" id="text-2">
+<div id="outline-container-org4205e65" class="outline-3">
+<h3 id="org4205e65"><span class="section-number-3">1.3</span> Solving for the Number of Periods</h3>
+<div class="outline-text-3" id="text-1-3">
 <p>
 You may also want to know how long you have to save for retirement until you hit a particular goal amount.  
 </p>
 </div>
 
-<div id="outline-container-org654569f" class="outline-3">
-<h3 id="org654569f"><span class="section-number-3">2.1</span> Using the FV Annuity Formula</h3>
-<div class="outline-text-3" id="text-2-1">
+<div id="outline-container-orgcbc06fd" class="outline-4">
+<h4 id="orgcbc06fd"><span class="section-number-4">1.3.1</span> Using the FV Annuity Formula</h4>
+<div class="outline-text-4" id="text-1-3-1">
 <p>
 We can rearrange our future value of an annuity formula for n:
 </p>
@@ -776,16 +776,28 @@ So, say we wanted to have $400,000 in our account at retirement.  Then we have t
 </div>
 
 
-<div id="outline-container-org4be152b" class="outline-2">
-<h2 id="org4be152b"><span class="section-number-2">3</span> Solving for r</h2>
+<div id="outline-container-orgb0f6560" class="outline-3">
+<h3 id="orgb0f6560"><span class="section-number-3">1.4</span> Solving for r</h3>
+</div>
+</div>
+
+
+<div id="outline-container-org2b85b0c" class="outline-2">
+<h2 id="org2b85b0c"><span class="section-number-2">2</span> Growing Annuity Retirement Model</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+A possibly unrealistic feature of using an annuity to model your retirement savings is its assumption that you make constant retirement payments. It is more likely that you will increase your payments over time as your salary increases. In this case we can calculate your retirement savings using the future value of a <b>Growing Annuity</b>.  The formula is:
+</p>
+</div>
 </div>
 
 
 
 
-<div id="outline-container-org9ac32fd" class="outline-2">
-<h2 id="org9ac32fd"><span class="section-number-2">4</span> Credits and Collaboration</h2>
-<div class="outline-text-2" id="text-4">
+
+<div id="outline-container-orgf91f305" class="outline-2">
+<h2 id="orgf91f305"><span class="section-number-2">3</span> Credits and Collaboration</h2>
+<div class="outline-text-2" id="text-3">
 <p>
 <a href="https://github.com/financial-education/operating_cash_flow">The code is here and pull requests are welcome.</a>
 </p>
@@ -794,7 +806,7 @@ So, say we wanted to have $400,000 in our account at retirement.  Then we have t
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Matt Brigida, Ph.D.</p>
-<p class="date">Created: 2020-02-08 Sat 19:58</p>
+<p class="date">Created: 2020-02-12 Wed 19:46</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

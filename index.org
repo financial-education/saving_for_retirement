@@ -4,7 +4,7 @@
 #+SETUPFILE: https://fniessen.github.io/org-html-themes/setup/theme-readtheorg.setup
 
 
-* Annuity Retirement Plan
+* Annuity Retirement Model
 
 Say as your retirement plan you intend to put $5000 per year, for the next 20 years, into a retirement account.  Further, you expect this account to earn 8% per year.  In this case your savings plan is in the form of an *annuity*.
 
@@ -240,11 +240,11 @@ The <b>future value of the annuity is $<span id="fva"></span></b>
 #+END_EXPORT
 
 
-* Solving for the Number of Periods
+** Solving for the Number of Periods
 
 You may also want to know how long you have to save for retirement until you hit a particular goal amount.  
 
-** Using the FV Annuity Formula
+*** Using the FV Annuity Formula
 
 We can rearrange our future value of an annuity formula for n:
 
@@ -268,7 +268,13 @@ $n = \frac{ln\left(\frac{400,000(0.08) + 5000}{5000}\right)}{ln(1 + 0.08)} = 26\
 # Add Python approach.
 
 
-* Solving for r
+** Solving for r
+
+
+* Growing Annuity Retirement Model
+
+A possibly unrealistic feature of using an annuity to model your retirement savings is its assumption that you make constant retirement payments. It is more likely that you will increase your payments over time as your salary increases. In this case we can calculate your retirement savings using the future value of a *Growing Annuity*.  The formula is:
+
 
 
 
