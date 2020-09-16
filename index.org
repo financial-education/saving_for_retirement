@@ -199,7 +199,7 @@ tr:nth-child(even) {
   <p align="center"><b>Cash Flow: <span id="cf_out"></b></span></p>  
   <input type="range" min="0.00" max="100.00" value="50" class="slider" id="r">
   <p align="center"><b>Interest Rate per Period: <span id="r_out">%</b></span></p>  
-  <input type="range" min="1" max="100" value="50" class="slider" id="n">
+  <input type="range" min="1" max="25" value="5" class="slider" id="n">
   <p align="center"><b>Number of Periods: <span id="n_out"></b></span></p>  
 </div>
 
