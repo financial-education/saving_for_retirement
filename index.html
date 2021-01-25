@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-09-15 Tue 20:12 -->
+<!-- 2021-01-25 Mon 14:44 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Saving for Retirement</title>
@@ -180,12 +180,12 @@
   .org-svg { width: 90%; }
   /*]]>*/-->
 </style>
-<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/styles/readtheorg/css/htmlize.css"/>
-<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/styles/readtheorg/css/readtheorg.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/readtheorg.css"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/lib/js/jquery.stickytableheaders.min.js"></script>
-<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/readtheorg/js/readtheorg.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/js/readtheorg.js"></script>
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
@@ -262,32 +262,32 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgf9699cb">1. Annuity Retirement Model</a>
+<li><a href="#org2ba97ca">1. Annuity Retirement Model</a>
 <ul>
-<li><a href="#orge7f7986">1.1. Future Value</a>
+<li><a href="#orgbcf13a6">1.1. Future Value</a>
 <ul>
-<li><a href="#org5023787">1.1.1. Using an Annuity Formula</a></li>
-<li><a href="#orgc4e4caa">1.1.2. Future Value of Each Cash Flow</a></li>
+<li><a href="#org5305068">1.1.1. Using an Annuity Formula</a></li>
+<li><a href="#org777c947">1.1.2. Future Value of Each Cash Flow</a></li>
 </ul>
 </li>
-<li><a href="#orge948b07">1.2. Interactive App</a></li>
-<li><a href="#orgbcdb580">1.3. Solving for the Number of Periods</a>
+<li><a href="#orgdabbff7">1.2. Interactive App</a></li>
+<li><a href="#org2228c40">1.3. Solving for the Number of Periods</a>
 <ul>
-<li><a href="#orgbb8777b">1.3.1. Using the FV Annuity Formula</a></li>
+<li><a href="#orgd4144f0">1.3.1. Using the FV Annuity Formula</a></li>
 </ul>
 </li>
-<li><a href="#org8858d28">1.4. Solving for r</a></li>
+<li><a href="#org00cdab2">1.4. Solving for r</a></li>
 </ul>
 </li>
-<li><a href="#org4101cd1">2. Growing Annuity Retirement Model</a></li>
-<li><a href="#orgf1ed63f">3. Credits and Collaboration</a></li>
+<li><a href="#orgc57174a">2. Growing Annuity Retirement Model</a></li>
+<li><a href="#orgc70d689">3. Credits and Collaboration</a></li>
 </ul>
 </div>
 </div>
 
 
-<div id="outline-container-orgf9699cb" class="outline-2">
-<h2 id="orgf9699cb"><span class="section-number-2">1</span> Annuity Retirement Model</h2>
+<div id="outline-container-org2ba97ca" class="outline-2">
+<h2 id="org2ba97ca"><span class="section-number-2">1</span> Annuity Retirement Model</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Say as your retirement plan you intend to put $5000 per year, for the next 20 years, into a retirement account.  Further, you expect this account to earn 8% per year.  In this case your savings plan is in the form of an <b>annuity</b>.
@@ -304,16 +304,16 @@ In your retirement plan $5000 is the fixed cash flow, the period is yearly, and 
 </p>
 </div>
 
-<div id="outline-container-orge7f7986" class="outline-3">
-<h3 id="orge7f7986"><span class="section-number-3">1.1</span> Future Value</h3>
+<div id="outline-container-orgbcf13a6" class="outline-3">
+<h3 id="orgbcf13a6"><span class="section-number-3">1.1</span> Future Value</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 To calculate how much we'll have in our retirement account we can (1) use a convenient annuity formula, or (2) find the future value of each individual cash flow and sum these future values.
 </p>
 </div>
 
-<div id="outline-container-org5023787" class="outline-4">
-<h4 id="org5023787"><span class="section-number-4">1.1.1</span> Using an Annuity Formula</h4>
+<div id="outline-container-org5305068" class="outline-4">
+<h4 id="org5305068"><span class="section-number-4">1.1.1</span> Using an Annuity Formula</h4>
 <div class="outline-text-4" id="text-1-1-1">
 <p>
 We can calculate how much money you will have in your account at the end of year 20 with the following <i>future value of an annuity</i> formula:
@@ -341,8 +341,8 @@ So you will have $228,809.90 in your retirement account in 20 years.
 </div>
 </div>
 
-<div id="outline-container-orgc4e4caa" class="outline-4">
-<h4 id="orgc4e4caa"><span class="section-number-4">1.1.2</span> Future Value of Each Cash Flow</h4>
+<div id="outline-container-org777c947" class="outline-4">
+<h4 id="org777c947"><span class="section-number-4">1.1.2</span> Future Value of Each Cash Flow</h4>
 <div class="outline-text-4" id="text-1-1-2">
 <p>
 Annuity formulas were much more useful prior to widespread use of spreadsheets and programming languages.  
@@ -350,7 +350,7 @@ Annuity formulas were much more useful prior to widespread use of spreadsheets a
 </div>
 
 <ol class="org-ol">
-<li><a id="org6253361"></a>Spreadsheet<br />
+<li><a id="orgffe1058"></a>Spreadsheet<br />
 <div class="outline-text-5" id="text-1-1-2-1">
 <p>
 The following table shows how you can organize a spreadsheet to find the future value of the annuity.  The formula in the future value column is:
@@ -533,18 +533,18 @@ The following table shows how you can organize a spreadsheet to find the future 
 </div>
 </li>
 
-<li><a id="org2033542"></a>Loop<br />
+<li><a id="orgdb43074"></a>Loop<br />
 <div class="outline-text-5" id="text-1-1-2-2">
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #8787d7;">cf</span> = 5000
-<span style="color: #8787d7;">r</span> = 0.08
-<span style="color: #8787d7;">n</span> = 20
+<pre class="src src-python"><span style="color: #6c71c4;">cf</span> = 5000
+<span style="color: #6c71c4;">r</span> = 0.08
+<span style="color: #6c71c4;">n</span> = 20
 
-<span style="color: #8787d7;">fva</span> = 0
-<span style="color: #268bd2; font-weight: bold;">for</span> n <span style="color: #268bd2; font-weight: bold;">in</span> <span style="color: #268bd2;">range</span><span style="color: #268bd2;">(</span>n<span style="color: #268bd2;">)</span>:
-<span style="background-color: #262626;"> </span>   <span style="color: #8787d7;">fva</span> += cf * <span style="color: #268bd2;">(</span>1 + r<span style="color: #268bd2;">)</span>**<span style="color: #268bd2;">(</span>n<span style="color: #268bd2;">)</span>
+<span style="color: #6c71c4;">fva</span> = 0
+<span style="color: #859900;">for</span> n <span style="color: #859900;">in</span> <span style="color: #6c71c4;">range</span><span style="color: #839496;">(</span>n<span style="color: #839496;">)</span>:
+<span style="color: #586e75; background-color: #073642;"> </span>   <span style="color: #6c71c4;">fva</span> += cf * <span style="color: #839496;">(</span>1 + r<span style="color: #839496;">)</span>**<span style="color: #839496;">(</span>n<span style="color: #839496;">)</span>
 
-<span style="color: #268bd2; font-weight: bold;">return</span> fva
+<span style="color: #859900;">return</span> fva
 </pre>
 </div>
 
@@ -559,20 +559,20 @@ Note range(n) gives you 0, 1, &#x2026; , n-1 which is happily what we want.
 </div>
 </li>
 
-<li><a id="orgbd39de3"></a>Recursive<br />
+<li><a id="orge7c790b"></a>Recursive<br />
 <div class="outline-text-5" id="text-1-1-2-3">
 <p>
 Here is a functional programming approach implemented in python&#x2014;it uses recursion instead of the imperative style loop. It is nice because it doesn't rely on changing variables' state, which can lead to errors.  Don't worry if it doesn't make sense at this point.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #268bd2; font-weight: bold;">def</span> <span style="color: #d75fd7; font-weight: bold;">fva</span><span style="color: #268bd2;">(</span>cf, r, n<span style="color: #268bd2;">)</span>:
-<span style="background-color: #262626;"> </span>   <span style="color: #268bd2; font-weight: bold;">if</span> n - 1 == 0:
-        <span style="color: #268bd2; font-weight: bold;">return</span> cf
-<span style="background-color: #262626;"> </span>   <span style="color: #268bd2; font-weight: bold;">else</span>:
-        <span style="color: #268bd2; font-weight: bold;">return</span> cf * <span style="color: #268bd2;">(</span>1 + r<span style="color: #268bd2;">)</span>**<span style="color: #268bd2;">(</span>n - 1<span style="color: #268bd2;">)</span> + fva<span style="color: #268bd2;">(</span>cf, r, n - 1<span style="color: #268bd2;">)</span>
+<pre class="src src-python"><span style="color: #859900;">def</span> <span style="color: #b58900;">fva</span><span style="color: #839496;">(</span>cf, r, n<span style="color: #839496;">)</span>:
+<span style="color: #586e75; background-color: #073642;"> </span>   <span style="color: #859900;">if</span> n - 1 == 0:
+        <span style="color: #859900;">return</span> cf
+<span style="color: #586e75; background-color: #073642;"> </span>   <span style="color: #859900;">else</span>:
+        <span style="color: #859900;">return</span> cf * <span style="color: #839496;">(</span>1 + r<span style="color: #839496;">)</span>**<span style="color: #839496;">(</span>n - 1<span style="color: #839496;">)</span> + fva<span style="color: #839496;">(</span>cf, r, n - 1<span style="color: #839496;">)</span>
 
-<span style="color: #268bd2; font-weight: bold;">return</span> fva<span style="color: #268bd2;">(</span>5000, 0.08, 20<span style="color: #268bd2;">)</span>
+<span style="color: #859900;">return</span> fva<span style="color: #839496;">(</span>5000, 0.08, 20<span style="color: #839496;">)</span>
 </pre>
 </div>
 
@@ -586,15 +586,15 @@ Same approach in R.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-R"><span style="color: #d75fd7; font-weight: bold;">fva</span> <span style="color: #df005f; font-weight: bold;">&lt;-</span> <span style="color: #268bd2; font-weight: bold;">function</span><span style="color: #268bd2;">(</span>cf, r, n<span style="color: #268bd2;">){</span>
-    <span style="color: #268bd2; font-weight: bold;">if</span><span style="color: #d75fd7;">(</span>n - 1 == 0<span style="color: #d75fd7;">){</span>
+<pre class="src src-R"><span style="color: #b58900;">fva</span> <span style="color: #268bd2;">&lt;-</span> <span style="color: #859900;">function</span><span style="color: #839496;">(</span>cf, r, n<span style="color: #839496;">){</span>
+    <span style="color: #859900;">if</span><span style="color: #2aa198;">(</span>n - 1 == 0<span style="color: #2aa198;">){</span>
         cf
-    <span style="color: #d75fd7;">}</span> <span style="color: #268bd2; font-weight: bold;">else</span> <span style="color: #d75fd7;">{</span>
-        cf * <span style="color: #2aa198;">(</span>1 + r<span style="color: #2aa198;">)</span>^<span style="color: #2aa198;">(</span>n - 1<span style="color: #2aa198;">)</span> + fva<span style="color: #2aa198;">(</span>cf, r, n - 1<span style="color: #2aa198;">)</span>
-    <span style="color: #d75fd7;">}</span>
-<span style="color: #268bd2;">}</span>
+    <span style="color: #2aa198;">}</span> <span style="color: #859900;">else</span> <span style="color: #2aa198;">{</span>
+        cf * <span style="color: #b58900;">(</span>1 + r<span style="color: #b58900;">)</span>^<span style="color: #b58900;">(</span>n - 1<span style="color: #b58900;">)</span> + fva<span style="color: #b58900;">(</span>cf, r, n - 1<span style="color: #b58900;">)</span>
+    <span style="color: #2aa198;">}</span>
+<span style="color: #839496;">}</span>
 
-fva<span style="color: #268bd2;">(</span>5000, 0.08, 20<span style="color: #268bd2;">)</span>
+fva<span style="color: #839496;">(</span>5000, 0.08, 20<span style="color: #839496;">)</span>
 </pre>
 </div>
 
@@ -610,8 +610,8 @@ fva<span style="color: #268bd2;">(</span>5000, 0.08, 20<span style="color: #268b
 
 
 
-<div id="outline-container-orge948b07" class="outline-3">
-<h3 id="orge948b07"><span class="section-number-3">1.2</span> Interactive App</h3>
+<div id="outline-container-orgdabbff7" class="outline-3">
+<h3 id="orgdabbff7"><span class="section-number-3">1.2</span> Interactive App</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 The following app will calculate OCF for any company you choose.  
@@ -729,16 +729,16 @@ The <b>future value of the annuity is $<span id="fva"></span></b>
 </div>
 
 
-<div id="outline-container-orgbcdb580" class="outline-3">
-<h3 id="orgbcdb580"><span class="section-number-3">1.3</span> Solving for the Number of Periods</h3>
+<div id="outline-container-org2228c40" class="outline-3">
+<h3 id="org2228c40"><span class="section-number-3">1.3</span> Solving for the Number of Periods</h3>
 <div class="outline-text-3" id="text-1-3">
 <p>
 You may also want to know how long you have to save for retirement until you hit a particular goal amount.  
 </p>
 </div>
 
-<div id="outline-container-orgbb8777b" class="outline-4">
-<h4 id="orgbb8777b"><span class="section-number-4">1.3.1</span> Using the FV Annuity Formula</h4>
+<div id="outline-container-orgd4144f0" class="outline-4">
+<h4 id="orgd4144f0"><span class="section-number-4">1.3.1</span> Using the FV Annuity Formula</h4>
 <div class="outline-text-4" id="text-1-3-1">
 <p>
 We can rearrange our future value of an annuity formula for n:
@@ -776,14 +776,14 @@ So, say we wanted to have $400,000 in our account at retirement.  Then we have t
 </div>
 
 
-<div id="outline-container-org8858d28" class="outline-3">
-<h3 id="org8858d28"><span class="section-number-3">1.4</span> Solving for r</h3>
+<div id="outline-container-org00cdab2" class="outline-3">
+<h3 id="org00cdab2"><span class="section-number-3">1.4</span> Solving for r</h3>
 </div>
 </div>
 
 
-<div id="outline-container-org4101cd1" class="outline-2">
-<h2 id="org4101cd1"><span class="section-number-2">2</span> Growing Annuity Retirement Model</h2>
+<div id="outline-container-orgc57174a" class="outline-2">
+<h2 id="orgc57174a"><span class="section-number-2">2</span> Growing Annuity Retirement Model</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 A possibly unrealistic feature of using an annuity to model your retirement savings is its assumption that you make constant retirement payments. It is more likely that you will increase your payments over time as your salary increases. In this case we can calculate your retirement savings using the future value of a <b>Growing Annuity</b>.  The formula is:
@@ -795,8 +795,8 @@ A possibly unrealistic feature of using an annuity to model your retirement savi
 
 
 
-<div id="outline-container-orgf1ed63f" class="outline-2">
-<h2 id="orgf1ed63f"><span class="section-number-2">3</span> Credits and Collaboration</h2>
+<div id="outline-container-orgc70d689" class="outline-2">
+<h2 id="orgc70d689"><span class="section-number-2">3</span> Credits and Collaboration</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 <a href="https://github.com/financial-education/operating_cash_flow">The code is here and pull requests are welcome.</a>
@@ -806,7 +806,7 @@ A possibly unrealistic feature of using an annuity to model your retirement savi
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Matt Brigida, Ph.D.</p>
-<p class="date">Created: 2020-09-15 Tue 20:12</p>
+<p class="date">Created: 2021-01-25 Mon 14:44</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
